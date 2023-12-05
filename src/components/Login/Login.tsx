@@ -1,12 +1,12 @@
 import {
   AbsoluteCenter,
   Box,
-  Button,
   Center,
   ChakraProvider,
   Input,
   Spacer,
 } from "@chakra-ui/react";
+import ButtonL from "../Button/Button";
 import { login } from "../../services/login";
 
 export default function Login() {
@@ -20,20 +20,9 @@ export default function Login() {
               <Spacer m={2} />
               <Input placeholder="Password" w={300} />
             </Center>
-            <Center pt={"10px"}>
-              <Button
-              onClick={login}
-                bg={"#183397"}
-                textColor={"white"}
-                flex={"center"}
-                _hover={{ bg: "#0900BE" }}
-              >
-                Entrar
-              </Button>
-            </Center>
+          <ButtonL onClick={login}/>
           </Box>
         </AbsoluteCenter>
-      
     </ChakraProvider>
   );
 }
