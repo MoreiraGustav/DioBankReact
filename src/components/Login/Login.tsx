@@ -9,26 +9,10 @@ import {
 } from "@chakra-ui/react";
 import ButtonL from "../Button/Button";
 import { login } from "../../services/login";
-import { useEffect, useState } from "react";
-import { api } from "../../api";
-
-interface userDataProps {
-  email: string;
-  password: string;
-  name: string;
-}
+import { useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
-  const [userData, setUserData] = useState<userDataProps>();
-
-  useEffect(() => {
-    const getData = async () => {
-      const data: any | userDataProps = await api;
-      setUserData(data);
-    };
-    getData();
-  }, []);
 
   return (
     <ChakraProvider>
@@ -37,7 +21,6 @@ export default function Login() {
           <Center pb={"5px"}>
             <VStack>
               <h1>Faça o Login</h1>
-              <p>{userData?.name}</p>
             </VStack>
           </Center>
 
