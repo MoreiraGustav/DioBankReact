@@ -4,6 +4,7 @@ import CardInfo from "../components/CardInfo";
 import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { AppContext } from "../contexts/AppContext";
+import { changeLocalStorage } from "../services/storage";
 
 interface userDataProps {
   email: string;
@@ -21,7 +22,7 @@ export default function Conta() {
   const navigate = useNavigate();
 
   !isLoggedIn && navigate("/");
-  
+
   useEffect(() => {
     const getData = async () => {
       const data: any | userDataProps = await api;
@@ -42,8 +43,8 @@ export default function Conta() {
         flexDirection={["column", "row"]}
       >
         {userData === undefined || userData === null ? (
-          <Center w={"full"} textAlign={"center"} >
-            <CardInfo mainContent={"carregando"} content={<Spinner />}  />
+          <Center w={"full"} textAlign={"center"}>
+            <CardInfo mainContent={"carregando"} content={<Spinner />} />
           </Center>
         ) : (
           <>

@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getAlllocalStorage } from "../services/storage";
 
 interface AppContextProps {
   user: string;
@@ -10,6 +11,17 @@ export const AppContext = createContext({} as AppContextProps);
 
 export default function AppContextProvider({ children }: any) {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const storage = getAlllocalStorage();
+
+useEffect(() => {
+
+  if (storage) {
+    const {login } = JSON.parse(storage);
+    setIsLoggedIn(login);
+  }
+}, [])
+
+
   const user = "gustavo";
 
   return (

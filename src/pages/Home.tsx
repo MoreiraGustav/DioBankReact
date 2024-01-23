@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { login } from "../services/login";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../contexts/AppContext";
+import { changeLocalStorage } from "../services/storage";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ export default function Home() {
       return alert("email invalido");
     }
     setIsLoggedIn(true);
+    changeLocalStorage({ login: true });
     navigate("/conta/1");
   };
   return (

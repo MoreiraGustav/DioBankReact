@@ -3,11 +3,13 @@ import { useContext } from "react";
 import { HiLogout } from "react-icons/hi";
 import { AppContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import { changeLocalStorage } from "../../services/storage";
 
 export default function Header() {
   const { setIsLoggedIn, isLoggedIn } = useContext(AppContext);
   const navigate = useNavigate();
   const logout = () => {
+    changeLocalStorage({login: false})
     setIsLoggedIn(false);
     navigate("/");
   };
