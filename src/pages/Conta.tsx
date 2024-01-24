@@ -4,7 +4,7 @@ import CardInfo from "../components/CardInfo";
 import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { AppContext } from "../contexts/AppContext";
-import { changeLocalStorage } from "../services/storage";
+
 
 interface userDataProps {
   email: string;
@@ -48,14 +48,16 @@ export default function Conta() {
           </Center>
         ) : (
           <>
-            <CardInfo
-              mainContent={`Bem Vindo(a) ${userData?.name}`}
-              content={`${actualData.getDay()}/${actualData.getMonth()}/${actualData.getFullYear()} - ${actualData.getHours()}:${actualData.getMinutes()}:${actualData.getSeconds()} `}
-            />
-            <CardInfo
-              mainContent={"Saldo"}
-              content={`R$ ${userData?.balance}`}
-            />
+            <Center w={'full'} textAlign={'center'} gap={'10px'} pt={'28px'}>
+              <CardInfo
+                mainContent={`Bem Vindo(a) ${userData?.name}`}
+                content={`${actualData.getDay()}/${actualData.getMonth()}/${actualData.getFullYear()} - ${actualData.getHours()}:${actualData.getMinutes()}:${actualData.getSeconds()} `}
+              />
+              <CardInfo
+                mainContent={"Saldo"}
+                content={`R$ ${userData?.balance}`}
+              />
+            </Center>
           </>
         )}
       </VStack>

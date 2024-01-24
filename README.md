@@ -1,58 +1,32 @@
-# Getting Started with Create React App
+Projeto desenvolvido com conceitos básicos de typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Como rodar o projeto
+1 - Clone o repositório
 
-## Available Scripts
+2 - Instale as dependeências
+npm install
 
-In the project directory, you can run:
+3 - Execute o projeto
+npm start
 
-### `npm start`
+Desafios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[ x ] Incluir validação da senha no campo de login
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para logar, além do email faça a validação com a senha informada pelo usuário.
+Durante a implementação, aplique o TDD e escreva os testes unitários para a nova validação.
 
-### `npm test`
+[ ] Implemente um sistema de login com a Context API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Seguindo os exemplos demonstrados ao longo do curso, crie um estado global para realizar o login
+Utilize o localStorage para armazenar os dados do usuário ao logar
+Caso os dados do usuário existam no localStorage, a tela de login não deve ser exibida
 
-### `npm run build`
+[ ] Crie uma página para exibir as informações do usuário
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crie uma página onde será exibido o nome, email
+Esta página só poderá ser acessada caso a usuária esteja logada
+Caso a usuária não esteja logada, deve ser mantida na página com a tela de login
+Escreva os testes unitários para as funções criadas ou refatoradas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-[ x ] Crie os componentes referentes aos elementos na página inicial
-
-Crie um componente para o header, com o título da aplicação
-Crie um componente para o botão, que aceite onClick como uma das props do componente
-Refatore o componente Card para receber o formulário de login. Ao invés de chamar elemento por elemento na página inicial, apenas o componente Card deve ser chamado.
-
-
-[ x ] Crie uma função de Boas vindas
-
-Ao clicar no botão, deve aparecer um alert com uma mensagem de boas vindas
-Crie o teste unitário da função
+[ ] Fazer o deploy no Netlify e compartilhar o link da página
