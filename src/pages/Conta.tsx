@@ -6,7 +6,7 @@ import { api } from "../api";
 import { AppContext } from "../contexts/AppContext";
 
 
-interface userDataProps {
+ interface userDataProps {
   email: string;
   password: string;
   name: string;
@@ -43,12 +43,13 @@ export default function Conta() {
         flexDirection={["column", "row"]}
       >
         {userData === undefined || userData === null ? (
+
           <Center w={"full"} textAlign={"center"}>
             <CardInfo mainContent={"carregando"} content={<Spinner />} />
           </Center>
         ) : (
           <>
-            <Center w={'full'} textAlign={'center'} gap={'10px'} pt={'28px'}>
+            <Center w={'full'} textAlign={'center'} gap={'10px'} pt={'28px'}  flexDirection={["column", "row"]}  >
               <CardInfo
                 mainContent={`Bem Vindo(a) ${userData?.name}`}
                 content={`${actualData.getDay()}/${actualData.getMonth()}/${actualData.getFullYear()} - ${actualData.getHours()}:${actualData.getMinutes()}:${actualData.getSeconds()} `}
