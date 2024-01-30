@@ -1,6 +1,6 @@
-Projeto desenvolvido com conceitos básicos de typescript
+# Projeto desenvolvido com conceitos básicos de typescript
 
-Como rodar o projeto
+## Como rodar o projeto
 1 - Clone o repositório
 
 2 - Instale as dependeências
@@ -9,7 +9,7 @@ npm install
 3 - Execute o projeto
 npm start
 
-Desafios
+## Desafios
 
 [ x ] Incluir validação da senha no campo de login
 
